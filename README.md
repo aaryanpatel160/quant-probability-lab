@@ -1,6 +1,6 @@
 # Quant Probability Lab
 
-A mobile-first, installable PWA for probability, expected value, statistics, market reasoning, and adaptive mental-maths practice. All lessons and questions are bundled for offline use. Progress stays in IndexedDB on the local device.
+A mobile-first, installable PWA for probability, expected value, statistics, market reasoning, and limitless adaptive mental-maths practice. All lessons and questions are bundled for offline use. Progress stays in IndexedDB on the local device.
 
 ## Develop
 

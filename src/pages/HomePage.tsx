@@ -36,7 +36,7 @@ export function HomePage() {
     </Link>
 
     <section className="quick-grid">
-      <Link to="/mental"><span>⚡</span><strong>Mental maths</strong><small>20 adaptive questions</small></Link>
+      <Link to="/mental"><span>⚡</span><strong>Mental maths</strong><small>Unlimited adaptive practice</small></Link>
       <Link to="/review"><span>↻</span><strong>Review weak spots</strong><small>Mistakes and bookmarks</small></Link>
     </section>
   </div>
