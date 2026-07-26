@@ -10,6 +10,7 @@ describe('MentalMathPage', () => {
     render(<ProgressProvider><MentalMathPage /></ProgressProvider>)
 
     await user.click(screen.getByRole('button', { name: 'Start practising' }))
+    expect(screen.getByLabelText('Mental maths answer')).toHaveAttribute('inputmode', 'text')
     for (let question = 1; question <= 20; question += 1) {
       await user.type(screen.getByLabelText('Mental maths answer'), '999999')
       await user.click(screen.getByRole('button', { name: 'Check' }))

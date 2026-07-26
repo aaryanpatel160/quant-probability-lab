@@ -10,6 +10,7 @@ describe('QuestionCard', () => {
   it('reveals hints progressively and keeps the solution explicit', async () => {
     const user = userEvent.setup()
     render(<MemoryRouter><ProgressProvider><QuestionCard question={questions[0]} /></ProgressProvider></MemoryRouter>)
+    expect(screen.getByLabelText('Your answer')).toHaveAttribute('inputmode', 'text')
     expect(screen.queryByText('FULL EXPLANATION')).not.toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: 'Hint 1' }))
     expect(screen.getByText('Hint 1', { selector: 'strong' })).toBeInTheDocument()

@@ -32,7 +32,7 @@ export function QuestionCard({ question, nextQuestionId }: { question: Question;
     if (question.answer.kind === 'self-graded') {
       return <textarea className="answer-input" rows={5} value={response} onChange={e => setResponse(e.target.value)} placeholder="Write or speak through your reasoning…" aria-label="Your reasoning" />
     }
-    return <input className="answer-input" inputMode="decimal" value={response} onChange={e => setResponse(e.target.value)} placeholder="e.g. 3/8, 0.375, or 37.5%" aria-label="Your answer" onKeyDown={e => { if (e.key === 'Enter') void submit() }} />
+    return <input className="answer-input" inputMode="text" value={response} onChange={e => setResponse(e.target.value)} placeholder="e.g. 3/8, 0.375, or 37.5%" aria-label="Your answer" onKeyDown={e => { if (e.key === 'Enter') void submit() }} />
   }, [question.answer, response]) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function submit() {
