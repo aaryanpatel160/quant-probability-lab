@@ -16,6 +16,8 @@ describe('adaptive mental maths', () => {
       const random = () => values[index++ % values.length]
       const problem = generateMentalProblem(tier, random)
       expect(Number.isFinite(problem.answer)).toBe(true)
+      expect(problem.answer).toBeGreaterThanOrEqual(0)
+      expect(problem.displayAnswer).not.toContain('/')
       expect(problem.prompt.length).toBeGreaterThan(2)
       expect(problem.method.length).toBeGreaterThan(10)
       expect(checkMentalAnswer(problem, String(problem.answer))).toBe(true)

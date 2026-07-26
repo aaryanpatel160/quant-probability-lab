@@ -79,7 +79,10 @@ function percentageProblem(tier: number, random: () => number) {
 
 function evProblem(tier: number, random: () => number) {
   const probabilities = [0.25, 0.4, 0.6, 0.75]
-  const p = pick(probabilities, random), win = randomInt(2, 8 + tier * 3, random) * 2, loss = randomInt(1, 4 + tier, random)
+  const p = pick(probabilities, random), loss = randomInt(1, 4 + tier, random)
+  const generatedWin = randomInt(2, 8 + tier * 3, random) * 2
+  const minimumPositiveWin = Math.floor(((1 - p) * loss) / p) + 1
+  const win = Math.max(generatedWin, minimumPositiveWin)
   const answer = p * win - (1 - p) * loss
   return result('expected-value', tier, `${Math.round(p * 100)}%: win £${win}; otherwise lose £${loss}. EV?`, answer, 'Weight the positive and negative payoffs separately, then add them.')
 }
